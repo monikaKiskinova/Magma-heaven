@@ -11,3 +11,4 @@ JS Back-End exam preparation task @SoftUni
 2. Set up Express
   - install and set up express; 
   - add resources; 
+  - add modular routers;

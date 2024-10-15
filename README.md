@@ -8,3 +8,6 @@ JS Back-End exam preparation task @SoftUni
   - add module type; 
   - add initial folder structure;
   - add debugging configuration; 
+2. Set up Express
+  - install and set up express; 
+  - add resources; 

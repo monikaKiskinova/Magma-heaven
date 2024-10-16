@@ -17,3 +17,5 @@ JS Back-End exam preparation task @SoftUni
   - add and set view engine; 
   - add home view; 
   - configure static middleware; 
+  - add layout; 
+  - add dynamic title

@@ -12,3 +12,8 @@ JS Back-End exam preparation task @SoftUni
   - install and set up express; 
   - add resources; 
   - add modular routers;
+3. Set up Handlebars
+  - install handlebars; 
+  - add and set view engine; 
+  - add home view; 
+  - configure static middleware; 

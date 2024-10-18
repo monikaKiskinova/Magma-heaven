@@ -11,9 +11,9 @@ mongooseInit();
 handlebarsInit(app);
 
 const PORT = process.env.PORT;
-console.log(PORT);
 
 app.use('/static', express.static('src/public'));
+app.use(express.urlencoded({extended: false}));
 app.use(router);
 
 app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}`));

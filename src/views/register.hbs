@@ -9,11 +9,12 @@
 
         <div class="register-box">
             <h1>Register</h1>
-            <form action="/register" method="POST">
+            {{!-- <form action="/register" method="POST"> --}}
+            <form method="POST">
                 <label>Username</label>
-                <input type="text" name="username" placeholder="Username..">
+                <input type="text" name="username" placeholder="Username.." value="{{username}}">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="Email..">
+                <input type="text" name="email" placeholder="Email.." value="{{email}}">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Password..">
                 <label>Confirm Password</label>

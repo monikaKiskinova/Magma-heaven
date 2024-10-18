@@ -27,4 +27,9 @@ JS Back-End exam preparation task @SoftUni
   - add user model; 
 5. Register
   - add Register Page
-    (add template, userController, and render page on get);
+    - add template, 
+    - userController, 
+    - and render page on get;
+  - add post action; 
+    - add body parser, 
+    - add user service; 

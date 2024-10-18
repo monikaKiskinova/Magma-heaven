@@ -24,3 +24,4 @@ JS Back-End exam preparation task @SoftUni
   - install mongoose; 
   - connect to local database;
   - add .env variable file; 
+  - add user model; 

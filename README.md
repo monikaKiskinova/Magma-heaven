@@ -20,3 +20,7 @@ JS Back-End exam preparation task @SoftUni
   - add layout; 
   - add dynamic title;
   - add 404 page;
+4. Add database
+  - install mongoose; 
+  - connect to local database;
+  - add .env variable file; 

@@ -1,11 +1,19 @@
 import express from 'express';
+import 'dotenv/config';
 import router from './routes.js';
-import handllebarsInit from './config/handlebarsInit.js';
+import handlebarsInit from './config/handlebarsInit.js';
+import mongooseInit from './config/mongooseInit.js';
+
+mongooseInit();
 
 const app = express();
-handllebarsInit(app);
+mongooseInit();
+handlebarsInit(app);
+
+const PORT = process.env.PORT;
+console.log(PORT);
 
 app.use('/static', express.static('src/public'));
 app.use(router);
 
-app.listen(3000, () => console.log('Server is listening at http://localhost:3000'));
+app.listen(PORT, () => console.log(`Server is listening at http://localhost:${PORT}`));

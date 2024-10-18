@@ -1,6 +1,6 @@
 import handlebars from 'express-handlebars';
 
-export default function handllebarsInit(app) {
+export default function handlebarsInit(app) {
     app.engine('hbs', handlebars.engine({
         extname: 'hbs',
     }));

@@ -25,3 +25,6 @@ JS Back-End exam preparation task @SoftUni
   - connect to local database;
   - add .env variable file; 
   - add user model; 
+5. Register
+  - add Register Page
+    (add template, userController, and render page on get);

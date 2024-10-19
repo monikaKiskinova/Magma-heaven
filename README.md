@@ -33,3 +33,5 @@ JS Back-End exam preparation task @SoftUni
   - add post action; 
     - add body parser, 
     - add user service; 
+    - hash password
+      - install bcrypt

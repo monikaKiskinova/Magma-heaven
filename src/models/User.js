@@ -1,6 +1,8 @@
 import { Schema, model } from "mongoose";
 import bcrypt from 'bcrypt';
 
+const SALT_ROUNDS = 10;
+
 const userSchema = new Schema({
     username: {
         type: String, 
@@ -16,9 +18,8 @@ const userSchema = new Schema({
     },
 });
 
-userSchema.pre('save', async function () {
-    const SALT_ROUNDS = 10; 
-    const hash = await bcrypt(this.paassword, SALT_ROUNDS); 
+userSchema.pre('save', async function () { 
+    const hash = await bcrypt.hash(this.password, SALT_ROUNDS); 
     this.password = hash;
 })
 

@@ -1,3 +1,5 @@
+import User from "../models/User.js";
+
 const userService = {
     register(username, email, password) {
         return User.create({

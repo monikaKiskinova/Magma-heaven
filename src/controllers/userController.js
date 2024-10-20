@@ -14,6 +14,7 @@ userController.post('/register', async (req, res) => {
         await userService.register(username, email, password);
         res.redirect('/');
     } catch(err) {
+        console.log('An error occurred', err.message);
         res.render('register', {title: 'Register Page', username, email});
     }
 });

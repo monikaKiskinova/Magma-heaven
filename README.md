@@ -37,3 +37,16 @@ JS Back-End exam preparation task @SoftUni
       - install bcrypt
     - confirm password;
     - check if user exists;
+6. Login
+  - install jsonwebtoken;
+  - install cookie-parser; 
+  - add cookie-parser middleware; 
+  - convert jsonwebtoken to promise-based (in lib);
+  - add login page; 
+  - add login post action;
+    - add user service login method;
+    - generate jwt; 
+    - return jwt with httpOnly cookie; 
+  - add auto login after register;
+7. Logout
+  - clear cookie;

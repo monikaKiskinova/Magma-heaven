@@ -57,3 +57,4 @@ JS Back-End exam preparation task @SoftUni
 9. Authorization
   - add userAuth middleware; 
   - add route guard (add isAuthenticated middleware);
+10. Dynamic navigation

@@ -18,9 +18,12 @@
                 <li><a href="/search">Search</a></li>
                 <li><a href="/volcanoes">All Volcanoes</a></li>
                 <li><a href="/create">Create Volcano Wiki</a></li>
+                {{#if isAuthenticated}}
+                <li><a href="/logout">Logout</a></li>
+                {{else}}
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
-                <li><a href="/logout">Logout</a></li>
+                {{/if}}
             </ul>
         </nav>
     </header>

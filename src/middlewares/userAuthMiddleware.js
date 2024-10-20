@@ -13,6 +13,11 @@ export const userAuthMiddleware = async (req, res, next) => {
         req.user = decodedToken;
         req.isAuthenticated = true;
 
+        res.locals.username = decodedToken.username;
+        res.locals.email = decodedToken.email;
+        res.locals._id = decodedToken._id;
+        res.locals.isAuthenticated = true;
+
         next();
     } catch (err) {
         res.clearCookie(AUTH_COOKIE_NAME);

@@ -24,7 +24,6 @@ const userService = {
     },
     async login(email, password) {
         const user = await User.findOne({email});
-        console.log(user);
 
         if (!user) {
             throw new Error('User doesn\'t exist');

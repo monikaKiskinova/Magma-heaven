@@ -1,6 +1,7 @@
 import { Router } from "express";
 import userService from "../services/userService.js";
 import { AUTH_COOKIE_NAME } from "../constants.js";
+import { getErrorMessage } from "../utils/errorUtils.js";
 
 const userController = Router(); 
 
@@ -16,9 +17,8 @@ userController.post('/register', async (req, res) => {
         res.cookie(AUTH_COOKIE_NAME, token, {httpOnly: true});
         res.redirect('/');
     } catch(err) {
-        //TODO: Add error handling
-        console.log('An error occurred', err.message);
-        res.render('register', {title: 'Register Page', username, email});
+        const error = getErrorMessage(err);
+        res.render('register', {title: 'Register Page', username, email, error});
     }
 });
 
@@ -34,8 +34,8 @@ userController.post('/login', async (req, res) => {
         res.cookie(AUTH_COOKIE_NAME, token, {httpOnly: true});
         res.redirect('/');
     } catch (err) {
-        //TODO: Send error message
-        res.render('login', {title: 'Login Page', email});
+        const error = getErrorMessage(err);
+        res.render('login', {title: 'Login Page', email, error});
     }
 }); 
 

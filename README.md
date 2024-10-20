@@ -50,3 +50,10 @@ JS Back-End exam preparation task @SoftUni
   - add auto login after register;
 7. Logout
   - clear cookie;
+8. Error Handling
+  - show error notification; 
+  - add error message util; 
+  - handle register and login errors; 
+9. Authorization
+  - add userAuth middleware; 
+  - add route guard (add isAuthenticated middleware);

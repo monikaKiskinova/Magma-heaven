@@ -35,3 +35,5 @@ JS Back-End exam preparation task @SoftUni
     - add user service; 
     - hash password
       - install bcrypt
+    - confirm password;
+    - check if user exists;

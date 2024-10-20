@@ -11,7 +11,7 @@ userController.post('/register', async (req, res) => {
     const {username, email, password, rePassword} = req.body;
 
     try {
-        await userService.register(username, email, password);
+        await userService.register(username, email, password, rePassword);
         res.redirect('/');
     } catch(err) {
         console.log('An error occurred', err.message);

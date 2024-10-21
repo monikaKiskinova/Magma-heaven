@@ -66,3 +66,6 @@ JS Back-End exam preparation task @SoftUni
   - error handling on post action; 
   - fix selected option for volcano type input; 
 12. All volcanoes page
+  - render all volcanoes page; 
+  - add getAll in volcanoService;
+  - details button; 

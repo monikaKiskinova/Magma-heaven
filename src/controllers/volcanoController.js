@@ -14,7 +14,7 @@ function getVolcanoTypeData({typeVolcano}) {
 
 volcanoController.get('/create', (req, res) => {
     const volcanoTypeData = getVolcanoTypeData({});
-    res.render('create', {title: 'Create Page', volcanoType:volcanoTypeData});
+    res.render('create', {title: 'Create Page', volcanoType: volcanoTypeData});
 }); 
 
 volcanoController.post('/create', async (req, res) => {
@@ -30,5 +30,11 @@ volcanoController.post('/create', async (req, res) => {
         res.render('create', {title: 'Create Page', volcano: volcanoData, volcanoType: volcanoTypeData, error});
     }
 }); 
+
+volcanoController.get('/volcanoes', async (req, res) => {
+    const volcanoes = await volcanoService.getAll().lean();
+    res.render('catalog', {title: 'Catalog Page', volcanoes}); 
+    // res.render('catalog', {title: 'Catalog Page'}); 
+})
 
 export default volcanoController;

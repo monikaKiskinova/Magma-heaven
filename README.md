@@ -58,3 +58,11 @@ JS Back-End exam preparation task @SoftUni
   - add userAuth middleware; 
   - add route guard (add isAuthenticated middleware);
 10. Dynamic navigation
+
+11. Create Page
+  - render create.hbs;
+  - create Volcano model;
+  - add volcano service;
+  - error handling on post action; 
+  - fix selected option for volcano type input; 
+12. All volcanoes page

@@ -56,6 +56,15 @@ volcanoController.get('/volcanoes/:volcanoId/vote', async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+}); 
+
+volcanoController.get('/volcanoes/:volcanoId/delete', async (req, res) => {
+    try {
+        await volcanoService.remove(req.params.volcanoId);
+        res.redirect('/volcanoes');
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 export default volcanoController;

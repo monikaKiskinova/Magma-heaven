@@ -13,6 +13,9 @@ const volcanoService = {
     vote(volcanoId, userId) {
         return Volcano.findByIdAndUpdate(volcanoId, {$push: {voteList: userId}}, {runValidators: true});
     },
+    remove(volcanoId) {
+        return Volcano.findByIdAndDelete(volcanoId);
+    },
 }
 
 export default volcanoService;

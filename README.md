@@ -75,3 +75,4 @@ JS Back-End exam preparation task @SoftUni
   - no buttons are visible if user is not logged in;
   - add vote functionality; 
   - vote count;
+  - add delete button functionality;

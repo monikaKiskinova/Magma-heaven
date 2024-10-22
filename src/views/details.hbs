@@ -26,13 +26,14 @@
                         <a href="/volcanoes/{{volcano._id}}/edit" class="btn-edit">Edit</a>
                         <a href="/volcanoes/{{volcano._id}}/delete" class="btn-delete">Delete</a>
                     </div>
-                    {{/if}}
+                    {{else}}
                     {{#if isVoted}}
                     <!-- Logged in user who has already vote for this volcano-->
                     <p class="vote-message">You've already voted for this volcano!</p>
                     {{else}}
                     <!-- Logged in user who has not yet vote for this volcano-->
                     <a href="/volcanoes/{{volcano._id}}/vote" class="btn-vote">Vote</a>
+                    {{/if}}
                     {{/if}}
                 </div>
                 {{/if}}

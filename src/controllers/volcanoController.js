@@ -41,7 +41,21 @@ volcanoController.get('/volcanoes', async (req, res) => {
 volcanoController.get('/volcanoes/:volcanoId/details', async (req, res) => {
     const volcano = await volcanoService.getOne(req.params.volcanoId).lean();
     const isOwner = volcano.owner.toString() === req.user?._id; 
-    res.render('details', {title: 'Details Page', volcano, isOwner});
+    const isVoted = volcano.voteList?.some(userId => userId.toString() === req.user?._id); 
+    const voteCount = volcano.voteList?.length || 0;
+    res.render('details', {title: 'Details Page', volcano, isOwner, isVoted, voteCount});
 }); 
+
+volcanoController.get('/volcanoes/:volcanoId/vote', async (req, res) => {
+    const volcanoId = req.params.volcanoId; 
+    const userId = req.user._id; 
+
+    try {
+        await volcanoService.vote(volcanoId, userId); 
+        res.redirect(`/volcanoes/${volcanoId}/details`); 
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 export default volcanoController;

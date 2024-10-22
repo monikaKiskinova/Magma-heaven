@@ -10,6 +10,9 @@ const volcanoService = {
     getOne(volcanoId) {
         return Volcano.findById(volcanoId);
     },
+    vote(volcanoId, userId) {
+        return Volcano.findByIdAndUpdate(volcanoId, {$push: {voteList: userId}}, {runValidators: true});
+    },
 }
 
 export default volcanoService;

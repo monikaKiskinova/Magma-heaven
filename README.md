@@ -72,4 +72,6 @@ JS Back-End exam preparation task @SoftUni
 13. Details Page
   - render details.hbs;
   - edit and delete buttons visible to volcano owner; 
-  - no buttons are visible if user is not logged in; 
+  - no buttons are visible if user is not logged in;
+  - add vote functionality; 
+  - vote count;

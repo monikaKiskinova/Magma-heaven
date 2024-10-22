@@ -1,6 +1,7 @@
 import { Router } from "express";
 import volcanoService from "../services/volcanoService.js";
 import { getErrorMessage } from "../utils/errorUtils.js";
+import Volcano from "../models/Volcano.js";
 
 const volcanoController = new Router();
 
@@ -35,6 +36,12 @@ volcanoController.get('/volcanoes', async (req, res) => {
     const volcanoes = await volcanoService.getAll().lean();
     res.render('catalog', {title: 'Catalog Page', volcanoes}); 
     // res.render('catalog', {title: 'Catalog Page'}); 
-})
+}); 
+
+volcanoController.get('/volcanoes/:volcanoId/details', async (req, res) => {
+    const volcano = await volcanoService.getOne(req.params.volcanoId).lean();
+    const isOwner = volcano.owner.toString() === req.user?._id; 
+    res.render('details', {title: 'Details Page', volcano, isOwner});
+}); 
 
 export default volcanoController;

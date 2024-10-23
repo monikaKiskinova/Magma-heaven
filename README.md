@@ -79,3 +79,4 @@ JS Back-End exam preparation task @SoftUni
   - add edit button functionality; 
     - render edit page; 
     - add selected volcano type; 
+    - add selected volcano type partial;

@@ -27,17 +27,9 @@
                     <input type="text" id="image" name="image"
                         value="{{volcano.image}}">
                     <label>Volcano Type:</label>
-                    <select id="type" name="typeVolcano">
-                        {{#each volcanoTypes}}
-                        <option value="{{value}}" {{selected}}>{{label}}</option>
-                        {{!-- <option value="Supervolcanoes">Supervolcanoes</option>
-                        <option value="Submarine">Submarine</option>
-                        <option value="Subglacial">Subglacial</option>
-                        <option value="Mud">Mud</option>
-                        <option value="Stratovolcanoes">Stratovolcanoes</option>
-                        <option value="Shield">Shield</option> --}}
-                        {{/each}}
-                    </select>
+                    
+                    {{>volcanoTypeSelected}}
+                    
                     <label>Description:</label>
                     <textarea id="description" name="description" placeholder="...">{{volcano.description}}</textarea>
                     <input type="submit" id="btn" value="Submit"></input>

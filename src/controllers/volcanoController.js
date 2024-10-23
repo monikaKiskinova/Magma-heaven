@@ -14,8 +14,8 @@ function getVolcanoTypeData({typeVolcano}) {
 }
 
 volcanoController.get('/create', (req, res) => {
-    const volcanoTypeData = getVolcanoTypeData({});
-    res.render('create', {title: 'Create Page', volcanoType: volcanoTypeData});
+    const volcanoTypes = getVolcanoTypeData({});
+    res.render('create', {title: 'Create Page', volcanoTypes});
 }); 
 
 volcanoController.post('/create', async (req, res) => {
@@ -27,8 +27,8 @@ volcanoController.post('/create', async (req, res) => {
         res.redirect('/volcanoes');
     } catch (err) {
         const error = getErrorMessage(err);
-        const volcanoTypeData = getVolcanoTypeData(volcanoData);
-        res.render('create', {title: 'Create Page', volcano: volcanoData, volcanoType: volcanoTypeData, error});
+        const volcanoTypes = getVolcanoTypeData(volcanoData);
+        res.render('create', {title: 'Create Page', volcano: volcanoData, volcanoTypes, error});
     }
 }); 
 
@@ -70,7 +70,7 @@ volcanoController.get('/volcanoes/:volcanoId/delete', async (req, res) => {
 volcanoController.get('/volcanoes/:volcanoId/edit', async (req, res) => {
     const volcano = await volcanoService.getOne(req.params.volcanoId).lean();
     const volcanoTypes = getVolcanoTypeData(volcano);
-    console.log(volcanoTypes);
+    
     res.render('edit', {title: 'Edit Page', volcano, volcanoTypes}); 
 })
 

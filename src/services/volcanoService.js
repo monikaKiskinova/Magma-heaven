@@ -16,6 +16,9 @@ const volcanoService = {
     remove(volcanoId) {
         return Volcano.findByIdAndDelete(volcanoId);
     },
+    edit(volcanoId, volcanoData) {
+        return Volcano.findByIdAndUpdate(volcanoId, volcanoData, {runValidators: true});
+    },
 }
 
 export default volcanoService;

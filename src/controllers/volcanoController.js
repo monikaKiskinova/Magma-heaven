@@ -1,7 +1,6 @@
 import { Router } from "express";
 import volcanoService from "../services/volcanoService.js";
 import { getErrorMessage } from "../utils/errorUtils.js";
-import Volcano from "../models/Volcano.js";
 
 const volcanoController = new Router();
 
@@ -70,8 +69,23 @@ volcanoController.get('/volcanoes/:volcanoId/delete', async (req, res) => {
 volcanoController.get('/volcanoes/:volcanoId/edit', async (req, res) => {
     const volcano = await volcanoService.getOne(req.params.volcanoId).lean();
     const volcanoTypes = getVolcanoTypeData(volcano);
-    
+
     res.render('edit', {title: 'Edit Page', volcano, volcanoTypes}); 
-})
+}); 
+
+volcanoController.post('/volcanoes/:volcanoId/edit', async (req,res) => {
+    const volcanoData = req.body; 
+    const volcanoId = req.params.volcanoId; 
+
+    try {
+        await volcanoService.edit(volcanoId, volcanoData);
+        res.redirect(`/volcanoes/${volcanoId}/details`);
+    } catch(err) {
+        const volcanoTypes = getVolcanoTypeData(volcanoData);
+        const error = getErrorMessage(err);
+
+        res.render('edit', {title: 'Edit Page', volcano: volcanoData, volcanoTypes, error});
+    }
+});
 
 export default volcanoController;

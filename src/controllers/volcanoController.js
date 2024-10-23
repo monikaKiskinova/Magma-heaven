@@ -65,6 +65,13 @@ volcanoController.get('/volcanoes/:volcanoId/delete', async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+}); 
+
+volcanoController.get('/volcanoes/:volcanoId/edit', async (req, res) => {
+    const volcano = await volcanoService.getOne(req.params.volcanoId).lean();
+    const volcanoTypes = getVolcanoTypeData(volcano);
+    console.log(volcanoTypes);
+    res.render('edit', {title: 'Edit Page', volcano, volcanoTypes}); 
 })
 
 export default volcanoController;

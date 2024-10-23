@@ -76,3 +76,6 @@ JS Back-End exam preparation task @SoftUni
   - add vote functionality; 
   - vote count;
   - add delete button functionality;
+  - add edit button functionality; 
+    - render edit page; 
+    - add selected volcano type; 
